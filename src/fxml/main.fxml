@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<VBox fx:controller="controllers.Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="331.0" prefWidth="409.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox prefHeight="34.0" prefWidth="600.0">
+         <children>
+            <TextField prefHeight="25.0" prefWidth="133.0" />
+            <Label prefHeight="15.0" prefWidth="116.0" text="Мощность кВт.">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </VBox.margin>
+      </HBox>
+      <VBox prefHeight="101.0" prefWidth="409.0">
+         <children>
+            <HBox prefHeight="35.0" prefWidth="447.0">
+               <children>
+                  <CheckBox mnemonicParsing="false" text="Строительство ВЛ/КЛ 10-0,4 кВ">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </CheckBox>
+                  <TextField prefHeight="25.0" prefWidth="105.0">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Label prefHeight="15.0" prefWidth="29.0" text="км.">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <CheckBox mnemonicParsing="false" text="Строительство КТП">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </CheckBox>
+            <CheckBox mnemonicParsing="false" text="Строительство ячеек">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </CheckBox>
+         </children>
+      </VBox>
+      <VBox prefHeight="45.0" prefWidth="409.0">
+         <children>
+            <HBox prefHeight="40.0" prefWidth="409.0">
+               <children>
+                  <ChoiceBox prefHeight="25.0" prefWidth="64.0">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <String fx:value="0.8"/>
+                     <String fx:value="1.0"/>
+                     <String fx:value="1.2"/>
+                  </ChoiceBox>
+                  <Label prefHeight="15.0" prefWidth="230.0" text="Территориальный коэффициент">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox prefHeight="74.0" prefWidth="409.0">
+         <children>
+            <Label text="Стоимость без НДС:">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="НДС:">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="Итого с НДС:">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+      <VBox prefHeight="84.0" prefWidth="409.0">
+         <children>
+            <Button mnemonicParsing="false" text="Экспорт в PDF">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</VBox>

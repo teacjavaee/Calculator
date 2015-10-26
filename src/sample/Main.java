@@ -9,10 +9,13 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Расчет стоимости технологического присоединения");
-        primaryStage.setScene(new Scene(root, 600, 550));
+    public void start(Stage primaryStage) throws Exception {
+        //Parent root = FXMLLoader.load(Main.class.getResource("../fxml/main.fxml")); абсолютный путь к файлу
+        Parent root = FXMLLoader.load(getClass().getResource("../fxml/main.fxml"));
+        primaryStage.setTitle("Расчет стоимости ТП");
+        primaryStage.setMaxHeight(360);
+        primaryStage.setMaxWidth(420);
+        primaryStage.setScene(new Scene(root, 420, 360));
         primaryStage.show();
     }
 
