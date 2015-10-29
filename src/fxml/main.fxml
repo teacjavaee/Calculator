@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
@@ -13,7 +15,20 @@
     <children>
         <HBox prefHeight="34.0" prefWidth="600.0">
             <children>
-                <TextField prefHeight="25.0" prefWidth="133.0" />
+                <TextField fx:id="textFieldPower" prefHeight="25.0" prefWidth="126.0" promptText="введите мощность">
+               <font>
+                  <Font name="Arial Narrow" size="11.0" />
+               </font>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect></TextField>
                 <Label prefHeight="15.0" prefWidth="116.0" text="Мощность кВт.">
                     <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -28,12 +43,12 @@
             <children>
                 <HBox prefHeight="35.0" prefWidth="447.0">
                     <children>
-                        <CheckBox mnemonicParsing="false" text="Строительство ВЛ/КЛ 10-0,4 кВ">
+                        <CheckBox fx:id="checkBoxLAP" mnemonicParsing="false" text="Строительство ВЛ/КЛ 10-0,4 кВ">
                             <HBox.margin>
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </HBox.margin>
                         </CheckBox>
-                        <TextField prefHeight="25.0" prefWidth="105.0">
+                        <TextField fx:id="textFieldLine" prefHeight="25.0" prefWidth="105.0">
                             <HBox.margin>
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </HBox.margin>
@@ -45,12 +60,12 @@
                         </Label>
                     </children>
                 </HBox>
-                <CheckBox mnemonicParsing="false" text="Строительство КТП">
+                <CheckBox fx:id="checkBoxKTP" mnemonicParsing="false" text="Строительство КТП">
                     <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </VBox.margin>
                 </CheckBox>
-                <CheckBox mnemonicParsing="false" text="Строительство ячеек">
+                <CheckBox fx:id="checkBoxPS" mnemonicParsing="false" text="Строительство ячеек">
                     <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </VBox.margin>
@@ -75,17 +90,17 @@
         </VBox>
         <VBox prefHeight="74.0" prefWidth="409.0">
             <children>
-                <Label text="Стоимость без НДС:">
+                <Label fx:id="labelnoNDS" text="Стоимость без НДС:">
                     <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </VBox.margin>
                 </Label>
-                <Label text="НДС:">
+                <Label fx:id="labelNDS" text="НДС:">
                     <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </VBox.margin>
                 </Label>
-                <Label text="Итого с НДС:">
+                <Label fx:id="labelFull" text="Итого с НДС:">
                     <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </VBox.margin>
@@ -94,7 +109,7 @@
         </VBox>
         <VBox prefHeight="84.0" prefWidth="409.0">
             <children>
-                <Button mnemonicParsing="false" text="Экспорт в PDF">
+                <Button fx:id="buttonPDF" mnemonicParsing="false" text="Экспорт в PDF">
                     <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </VBox.margin>
