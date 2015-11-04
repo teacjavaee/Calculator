@@ -1,5 +1,7 @@
 package controllers;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -15,7 +17,10 @@ public class Controller implements Initializable {
     private TextField textFieldPower;
 
     @FXML
-    private TextField textFieldLine;
+    private TextField textFieldLineVL;
+
+    @FXML
+    private TextField textFieldLineKL;
 
     @FXML
     private CheckBox checkBoxLAP;
@@ -41,17 +46,37 @@ public class Controller implements Initializable {
     @FXML
     private ComboBox<String> comboBox;
 
-    ObservableList<String> list = FXCollections.observableArrayList("0.8", "1.0", "1.15", "1.25");
+    ObservableList<String> listcomboBox = FXCollections.observableArrayList("0.8", "1.0", "1.15", "1.25");
+    Tooltip tooltipLine = new Tooltip("Расстояние указывается в км.");
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        textFieldPower.setTooltip(new Tooltip("Мощность вводится в кВт, в качестве разделителя использовать точку"));
-       // textFieldPower.setStyle("-fx-font-weight:bold;-fx-font-size:10pt;-fx-font-family:Georgia"); если шрифт определен в FXML то здесь он переопределяеся и распространяется на весь текс поля.
-        comboBox.setItems(list);
-        textFieldLine.setVisible(false);
-        if (checkBoxLAP.isSelected()) {
-            textFieldLine.setVisible(true);
-        }
 
+        textFieldPower.setTooltip(new Tooltip("Мощность вводится в кВт, в качестве разделителя использовать точку"));
+
+        comboBox.setItems(listcomboBox);
+
+        textFieldLineVL.setVisible(false);
+        textFieldLineVL.setTooltip(tooltipLine);
+
+        textFieldLineKL.setVisible(false);
+        textFieldLineKL.setTooltip(tooltipLine);
+
+        checkBoxLAP.selectedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+                if (checkBoxLAP.isSelected()) {
+                    textFieldLineVL.setVisible(true);
+                    textFieldLineKL.setVisible(true);
+
+                } else {
+                    textFieldLineVL.setVisible(false);
+                    textFieldLineKL.setVisible(false);
+                    textFieldLineKL.clear();
+                    textFieldLineVL.clear();
+                }
+            }
+        });
     }
+
 }
