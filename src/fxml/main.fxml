@@ -135,7 +135,7 @@
         </VBox>
         <VBox prefHeight="84.0" prefWidth="409.0">
             <children>
-                <Button fx:id="buttonPDF" mnemonicParsing="false" text="Экспорт в PDF">
+                <Button fx:id="buttonSumma" mnemonicParsing="false" onAction="#actionButtonPressed" text="Рассчитать">
                     <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </VBox.margin>

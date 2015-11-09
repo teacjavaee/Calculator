@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import sample.Calculator;
 
+import java.math.BigDecimal;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -44,10 +45,11 @@ public class Controller implements Initializable {
     private Label labelFull;
 
     @FXML
-    private Button buttonPDF;
+    private Button buttonSumma;
 
     @FXML
     private ComboBox<String> comboBox;
+
 
     ObservableList<String> listcomboBox = FXCollections.observableArrayList("0.8", "1.0", "1.15", "1.25");
     Tooltip tooltipLine = new Tooltip("Расстояние указывается в км.");
@@ -57,7 +59,6 @@ public class Controller implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         textFieldPower.setTooltip(new Tooltip("Мощность вводится в кВт, в качестве разделителя использовать точку"));
-
         comboBox.setItems(listcomboBox);
 
         textFieldLineVL.setVisible(false);
@@ -73,14 +74,15 @@ public class Controller implements Initializable {
 //                labelnoNDS.setText("Стоимость без НДС: " + Double.parseDouble(textFieldPower.getText()) * calc.getC1() + " руб.");
 //            }
 //        });
-        textFieldPower.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                if (textFieldPower != null) {
-                    labelnoNDS.setText("Стоимость без НДС: " + Double.parseDouble(textFieldPower.getText()) * calc.getC1() + " руб.");
-                }
-            }
-        });
+
+//        textFieldPower.setOnAction(new EventHandler<ActionEvent>() {
+//            @Override
+//            public void handle(ActionEvent event) {
+//                if (textFieldPower != null) {
+//                    labelnoNDS.setText("Стоимость без НДС: " + Double.parseDouble(textFieldPower.getText()) * calc.getC1() + " руб.");
+//                }
+//            }
+//        });
         checkBoxLAP.selectedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
@@ -97,5 +99,16 @@ public class Controller implements Initializable {
             }
         });
     }
+
+    public void actionButtonPressed(ActionEvent actionEvent) {
+        double noNDS = new BigDecimal((Double.parseDouble(textFieldPower.getText()) * calc.getC1() * Double.parseDouble(comboBox.getValue()))).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
+        double Full = new BigDecimal((Double.parseDouble(textFieldPower.getText()) * calc.getC1() * Double.parseDouble(comboBox.getValue()))* 1.18).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
+        double NDS = new BigDecimal((Double.parseDouble(textFieldPower.getText()) * calc.getC1() * Double.parseDouble(comboBox.getValue()) * 0.18)).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
+        labelnoNDS.setText("Стоимость без НДС: " + noNDS + " .руб");
+        labelFull.setText("Итого c НДС: " + Full + " .руб");
+        labelNDS.setText("НДС: " + NDS + " .руб");
+
+    }
+
 
 }
