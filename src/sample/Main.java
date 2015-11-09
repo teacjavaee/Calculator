@@ -1,5 +1,6 @@
 package sample;
 
+import controllers.Controller;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -23,5 +24,11 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
+        Controller controller = new Controller();
+        Calculator calc = new Calculator();
+
+        //double summa = Integer.parseInt(controller.getTextFieldPower().getText()) * calc.getC1();
+
+
     }
 }

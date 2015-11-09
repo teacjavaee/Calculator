@@ -5,6 +5,11 @@ package sample;
  */
 public class Calculator {
     private double c1 = 851.5;
+
+    public double getC1() {
+        return c1;
+    }
+
     private double c2_04 = 220441.3;
     private double c2_10 = 362774.73;
     private double c3_04 = 291255.0;

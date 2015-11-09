@@ -4,9 +4,12 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import sample.Calculator;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -48,6 +51,7 @@ public class Controller implements Initializable {
 
     ObservableList<String> listcomboBox = FXCollections.observableArrayList("0.8", "1.0", "1.15", "1.25");
     Tooltip tooltipLine = new Tooltip("Расстояние указывается в км.");
+    Calculator calc = new Calculator();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -62,6 +66,21 @@ public class Controller implements Initializable {
         textFieldLineKL.setVisible(false);
         textFieldLineKL.setTooltip(tooltipLine);
 
+//        textFieldPower.selectedTextProperty().addListener(new ChangeListener<String>() {
+//            @Override
+//            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+//                if (textFieldPower != null)
+//                labelnoNDS.setText("Стоимость без НДС: " + Double.parseDouble(textFieldPower.getText()) * calc.getC1() + " руб.");
+//            }
+//        });
+        textFieldPower.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                if (textFieldPower != null) {
+                    labelnoNDS.setText("Стоимость без НДС: " + Double.parseDouble(textFieldPower.getText()) * calc.getC1() + " руб.");
+                }
+            }
+        });
         checkBoxLAP.selectedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
