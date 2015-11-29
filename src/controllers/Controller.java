@@ -67,22 +67,6 @@ public class Controller implements Initializable {
         textFieldLineKL.setVisible(false);
         textFieldLineKL.setTooltip(tooltipLine);
 
-//        textFieldPower.selectedTextProperty().addListener(new ChangeListener<String>() {
-//            @Override
-//            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-//                if (textFieldPower != null)
-//                labelnoNDS.setText("Стоимость без НДС: " + Double.parseDouble(textFieldPower.getText()) * calc.getC1() + " руб.");
-//            }
-//        });
-
-//        textFieldPower.setOnAction(new EventHandler<ActionEvent>() {
-//            @Override
-//            public void handle(ActionEvent event) {
-//                if (textFieldPower != null) {
-//                    labelnoNDS.setText("Стоимость без НДС: " + Double.parseDouble(textFieldPower.getText()) * calc.getC1() + " руб.");
-//                }
-//            }
-//        });
         checkBoxLAP.selectedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
@@ -107,7 +91,6 @@ public class Controller implements Initializable {
         labelnoNDS.setText("Стоимость без НДС: " + noNDS + " .руб");
         labelFull.setText("Итого c НДС: " + Full + " .руб");
         labelNDS.setText("НДС: " + NDS + " .руб");
-
     }
 
 

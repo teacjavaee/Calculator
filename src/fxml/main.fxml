@@ -16,19 +16,19 @@
         <HBox prefHeight="34.0" prefWidth="600.0">
             <children>
                 <TextField fx:id="textFieldPower" prefHeight="25.0" prefWidth="126.0" promptText="введите мощность">
-               <font>
-                  <Font name="Arial Narrow" size="11.0" />
-               </font>
-               <effect>
-                  <Lighting>
-                     <bumpInput>
-                        <Shadow />
-                     </bumpInput>
-                     <light>
-                        <Light.Distant />
-                     </light>
-                  </Lighting>
-               </effect></TextField>
+                    <font>
+                        <Font name="Arial Narrow" size="11.0" />
+                    </font>
+                    <effect>
+                        <Lighting>
+                            <bumpInput>
+                                <Shadow />
+                            </bumpInput>
+                            <light>
+                                <Light.Distant />
+                            </light>
+                        </Lighting>
+                    </effect></TextField>
                 <Label prefHeight="15.0" prefWidth="116.0" text="Мощность кВт.">
                     <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -66,24 +66,24 @@
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </HBox.margin>
                         </TextField>
-                  <TextField fx:id="textFieldLineKL" prefHeight="25.0" prefWidth="105.0" promptText="введите длинну">
-                     <effect>
-                        <Lighting>
-                           <bumpInput>
-                              <Shadow />
-                           </bumpInput>
-                           <light>
-                              <Light.Distant />
-                           </light>
-                        </Lighting>
-                     </effect>
-                     <font>
-                        <Font name="Arial Narrow" size="11.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </HBox.margin>
-                  </TextField>
+                        <TextField fx:id="textFieldLineKL" prefHeight="25.0" prefWidth="105.0" promptText="введите длинну">
+                            <effect>
+                                <Lighting>
+                                    <bumpInput>
+                                        <Shadow />
+                                    </bumpInput>
+                                    <light>
+                                        <Light.Distant />
+                                    </light>
+                                </Lighting>
+                            </effect>
+                            <font>
+                                <Font name="Arial Narrow" size="11.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </HBox.margin>
+                        </TextField>
                     </children>
                 </HBox>
                 <CheckBox fx:id="checkBoxKTP" mnemonicParsing="false" text="Строительство КТП">
@@ -106,9 +106,9 @@
                             <HBox.margin>
                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </HBox.margin>
-                     <graphic>
-                        <ComboBox fx:id="comboBox" promptText="..." />
-                     </graphic>
+                            <graphic>
+                                <ComboBox fx:id="comboBox" promptText="..." />
+                            </graphic>
                         </Label>
                     </children>
                 </HBox>
